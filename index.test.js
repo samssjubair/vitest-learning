@@ -1,5 +1,5 @@
-import {it, expect, describe} from 'vitest';
-import { divide } from './index.js';
+import {it, expect, describe, vi} from 'vitest';
+import { divide, executeCallback } from './index.js';
 
 
 describe('divide()', () => {
@@ -19,4 +19,20 @@ describe('divide()', () => {
       };
       expect(resultFn).toThrowError("Division by zero");
     });
+});
+
+describe("callback()", () => {
+  it("should correctly calls the provided callback function", () => {
+    const loggerFn= vi.fn();
+    executeCallback(loggerFn);
+    expect(loggerFn).toHaveBeenCalled();
+  });
+
+  it("should executed with the provided taskText argument.", () => {
+    const loggerFn = vi.fn();
+    executeCallback(loggerFn, "Kire mama");
+    expect(loggerFn).toHaveBeenCalledWith("Kire mama");
+  });
+
+  
 });

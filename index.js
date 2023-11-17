@@ -4,3 +4,15 @@ export function divide(a, b) {
   }
   return a / b;
 }
+
+export function executeCallback(callback, taskText) {
+  callback(taskText);
+}
+
+function myCallback(taskText) {
+  console.log(`Task: ${taskText}`);
+}
+
+
+executeCallback(myCallback, "Buy groceries");
+
