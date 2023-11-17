@@ -1,0 +1,12 @@
+{
+  "name": "testing-assignment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest --reporter verbose --run"
+  },
+  "devDependencies": {
+    "vitest": "^0.34.6"
+  }
+}
